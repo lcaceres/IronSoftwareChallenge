@@ -2,6 +2,39 @@
     ViewData["Title"] = "Home Page";
 }
 
+@section Scripts {
+    <script src="~/js/oldphone.js"></script>
+}
+
 <div class="text-center">
     <h1 class="display-4">Old Phone Pad</h1>
+
+    <div style="display: grid; grid-template-columns: repeat(3, 80px); gap: 10px; justify-content: center; margin-top: 20px;">
+        <button type="button" onclick="pressKey('1')">1<br />&’(</button>
+        <button type="button" onclick="pressKey('2')">2<br />ABC</button>
+        <button type="button" onclick="pressKey('3')">3<br />DEF</button>
+        <button type="button" onclick="pressKey('4')">4<br />GHI</button>
+        <button type="button" onclick="pressKey('5')">5<br />JKL</button>
+        <button type="button" onclick="pressKey('6')">6<br />MNO</button>
+        <button type="button" onclick="pressKey('7')">7<br />PQRS</button>
+        <button type="button" onclick="pressKey('8')">8<br />TUV</button>
+        <button type="button" onclick="pressKey('9')">9<br />WXYZ</button>
+        <button type="button" onclick="pressKey('*')">*<br />Delete</button>
+        <button type="button" onclick="pressKey('0')">0<br />[_]</button>
+        <button type="button" onclick="pressKey('#')">#<br />Send</button>
+    </div>
+
+    <div style="margin-top: 30px; text-align: center;">
+        <label for="displaySequence"><strong>Input keys</strong></label><br />
+        <textarea id="displaySequence" disabled rows="3" style="width: 80%; text-align: center;"></textarea>
+    </div>
+
+    <div style="margin-top: 10px; text-align: center;">
+        <label for="displayResult"><strong>Output result</strong></label><br />
+        <input type="text" id="displayResult" disabled style="width: 80%; text-align: center;" />
+    </div>
+
+    <div style="margin-top: 20px; text-align: center;">
+        <button type="button" onclick="clearDisplay()">Clear</button>
+    </div>
 </div>

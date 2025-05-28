@@ -18,10 +18,13 @@ namespace IronSoftwareChallenge.Controllers
             return View();
         }
 
-        public IActionResult Privacy()
+        [HttpPost]
+        public IActionResult ProcessKey(string sequence)
         {
-            return View();
+            var result = "Result";
+            return Json(new { result });
         }
+
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
