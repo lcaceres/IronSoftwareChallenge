@@ -1,4 +1,3 @@
-using IronSoftwareChallengeService.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 

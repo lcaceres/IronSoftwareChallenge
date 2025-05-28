@@ -6,16 +6,17 @@ let justSubmitted = false;
 function pressKey(k) {
     const now = Date.now();
 
-    if (justSubmitted && k !== '#' && k !== '*' && k !== '0') {
+    if (justSubmitted) {
         clearDisplay();
-        justSubmitted = false;
     }
 
+
     if (k === "#") {
+        if (justSubmitted || currentSequence.length === 0) return;
         $.ajax({
             type: "POST",
             url: "/Home/ProcessKey",
-            data: { sequence: currentSequence + "#" },
+            data: { text: currentSequence + "#" },
             success: function (response) {
                 document.getElementById("displayResult").value = response.result;
                 document.getElementById("displaySequence").value = currentSequence + "#";
@@ -29,9 +30,18 @@ function pressKey(k) {
         return;
     }
 
-    if (k === "*" || k === "0") {
+
+    if (k === "*") {
         currentSequence += k;
         document.getElementById("displaySequence").value = currentSequence;
+        lastKey = null;
+        return;
+    }
+
+    if (k === "0") {
+        currentSequence += "0";
+        document.getElementById("displaySequence").value = currentSequence;
+        lastKey = null;
         return;
     }
 

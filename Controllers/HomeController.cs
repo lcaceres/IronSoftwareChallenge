@@ -21,7 +21,7 @@ namespace IronSoftwareChallenge.Controllers
         }
 
         [HttpPost]
-        public IActionResult ProcessKey(string text)
+        public IActionResult ProcessKey([FromForm] string text)
         {
             var result = TextDecoder.Decode(text);
             return Json(new { result });
