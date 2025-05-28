@@ -55,3 +55,7 @@ nunit-*.xml
 
 # Visual Studio folder
 .vs/
+*.suo
+*.user
+*.db
+*.bin
