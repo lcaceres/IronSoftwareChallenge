@@ -1,4 +1,5 @@
 using IronSoftwareChallenge.Models;
+using IronSoftwareChallenge.Utils;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
@@ -7,6 +8,7 @@ namespace IronSoftwareChallenge.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+
 
         public HomeController(ILogger<HomeController> logger)
         {
@@ -19,9 +21,9 @@ namespace IronSoftwareChallenge.Controllers
         }
 
         [HttpPost]
-        public IActionResult ProcessKey(string sequence)
+        public IActionResult ProcessKey(string text)
         {
-            var result = "Result";
+            var result = TextDecoder.Decode(text);
             return Json(new { result });
         }
 
