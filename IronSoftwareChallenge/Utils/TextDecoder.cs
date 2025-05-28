@@ -54,7 +54,7 @@ namespace IronSoftwareChallenge.Utils
 
             LetterFromSequence(currentSequence.ToString(), result);
 
-            return result.ToString();
+            return result.ToString().Trim();
         }
 
         private static void LetterFromSequence(string sequence, StringBuilder result)
