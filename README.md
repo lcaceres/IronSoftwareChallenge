@@ -12,11 +12,11 @@ Given a string of keypresses simulating input on a classic phone keypad. The goa
 - Hash (`#`) signals execute the result.
 
 ### Examples
-TextDecoder.Decode("222 2 22#") => "CAB"
-TextDecoder.Decode("33#") => "E"
-TextDecoder.Decode("227*#") => "B"
-TextDecoder.Decode("4433555 555666#") => "HELLO"
-TextDecoder.Decode("8 88777444666*664#") => "TURING"
+- TextDecoder.Decode("222 2 22#") => "CAB"
+- TextDecoder.Decode("33#") => "E"
+- TextDecoder.Decode("227*#") => "B"
+- TextDecoder.Decode("4433555 555666#") => "HELLO"
+- TextDecoder.Decode("8 88777444666*664#") => "TURING"
 
 ## Web Interface
 
